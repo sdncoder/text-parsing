@@ -1,4 +1,4 @@
-awk notes
+###awk notes
 ---
 in an awk rule either the patter or the action can be omitted, but not both
 - if the pattern is omitted -> action is performed for every input line
@@ -8,7 +8,7 @@ in an awk rule either the patter or the action can be omitted, but not both
 
 > awk options 'selection _criteria {action }' input-file > output-file
 
-### filter and print 
+#### filter and print 
 - `awk '/xxx/`      			# filter on character string xxx
 - `{ print $0 }`    			# print the current line
 - `( print $1 }`    			# print first field
@@ -17,11 +17,11 @@ in an awk rule either the patter or the action can be omitted, but not both
 - `sed 's/,/\n/g'`			# use sed on command line
 - `gsub(/,/, "\n")`			# global replace , with \n
 
-#### options
+##### options
 - -f file
 - -F field separator
 
-#### basic filter and print examples
+##### basic filter and print examples
 Cisco show interface brief saved in *cisco_int*
 ```
 INTF                    ADDR             STATUS    PROTO
@@ -79,7 +79,7 @@ add header using BEGIN:
 > Vlan32       up     100.125.172.34
 > Vlan40       up     100.123.66.2
 
-### using sed with awk on the command line
+#### using sed with awk on the command line
 __awk has its own string maniplution functions for use with awk natively__
 
 
@@ -131,7 +131,7 @@ use sed to parse multiple Ansible show and run commands:
 > Cisco IOS XR Software, Version 7.5.1
 
 
-### awk string manipulation functions
+#### awk string manipulation functions
 **gsub - global substitution**
 
 `awk '{ gsub(/,/, "\n"); print }' sh-int-brief`  # global replace , with \n
@@ -140,7 +140,7 @@ use sed to parse multiple Ansible show and run commands:
 > 'MgmtEth0/RP1/CPU0/0            unassigned      Shutdown        Down     default '
 > 'TenGigE0/0/0/0                 unassigned      Shutdown        Down     default '
 
-### awk processing - BEGIN and END
+#### awk processing - BEGIN and END
 
 **BEGIN** - awk will execute actions once before input is read
 
