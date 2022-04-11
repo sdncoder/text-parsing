@@ -10,13 +10,13 @@ _awk options 'selection _criteria {action }' input-file > output-file_
 #### filter and print
 | syntax | use |
 |--------|-----|
-| `awk '/xxx/` | filter on character string xxx |
-| `{ print $0 }` | print the current line |
-| `( print $1 }` | print first field |
-| `{ OFS = ":" }` | output field selector, instead of default space |
-| `{printf "%-8s %s\n", $1, $4}` | printf width modifier |
-| `sed 's/,/\n/g'` | use sed on command line |
-| `gsub(/,/, "\n")` | global replace , with \n |
+| awk '/xxx/ | filter on character string xxx |
+| { print $0 } | print the current line |
+| { print $1 } | print first field |
+| { OFS = ":" } | output field selector, instead of default space |
+| {printf "%-8s %s\n", $1, $4} | printf width modifier |
+| sed 's/,/\n/g' | use sed on command line |
+| gsub(/,/, "\n") | global replace , with \n |
 
 ##### options
 - -f file
@@ -24,7 +24,7 @@ _awk options 'selection _criteria {action }' input-file > output-file_
 
 ##### basic filter and print examples
 Cisco show interface brief saved in *cisco_int*
-```
+```text
 INTF                    ADDR             STATUS    PROTO
 ----------------------  ---------------  --------  -------
 TenGigabitEthernet1/24  unassigned       down      down
@@ -42,7 +42,7 @@ Vlan40                  100.123.66.2     up        up
 
 filter on tunnel interfaces that are up:  
 `awk '/Tun/ { print $1 " " $3 }' cisco-int`
-```
+```yaml
 Tunnel0 up  
 Tunnel1 up  
 Tunnel2 up  
