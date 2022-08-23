@@ -2,11 +2,11 @@
 #
 # Parse output from IOS-XR Ansible playbooks.
 # iosxr_command tasks:
-=pod
-sh run | hostname
-sh version | i Software
-sh ip int brief
-=cut
+#
+# sh run | hostname
+# sh version | i Software
+# sh ip int brief
+#
 # files from playbook in parse_out folder one per host
 # output created 
 =pod
