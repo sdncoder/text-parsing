@@ -3,9 +3,9 @@
 # Parse output from IOS-XR Ansible playbooks.
 # iosxr_command tasks:
 #
-# sh run | hostname
-# sh version | i Software
-# sh ip int brief
+#sh run | hostname
+#sh version | i Software
+#sh ip int brief
 #
 # files from playbook in parse_out folder one per host
 # output created 
