@@ -7,7 +7,7 @@ in an awk rule either the pattern or the action can be omitted, but not both
 *pattern and action*  
 _awk options 'selection _criteria {action }' input-file > output-file_
 
-#### filter and print
+#### filter and print  
 | syntax | use |
 |--------|-----|
 | awk '/xxx/ | filter on character string xxx |
