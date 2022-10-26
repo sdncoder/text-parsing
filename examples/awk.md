@@ -81,9 +81,9 @@ awk 'BEGIN {
 ```yaml
 Interface   Status   Address
 Vlan1        up     unassigned
-Vlan10       up     100.125.172.2
-Vlan32       up     100.125.172.34
-Vlan40       up     100.123.66.2
+Vlan10       up     10.125.172.2
+Vlan32       up     10.125.172.34
+Vlan40       up     10.123.66.2
 ```
 #### using sed with awk on the command line
 _awk has its own string manipulation functions_
@@ -96,7 +96,7 @@ use sed to replace "," with newline and create columns:
 `sed 's/,/\n/g' sh-int-brief`
 ```yaml
 'Interface                      IP-Address      Status          Protocol Vrf-Name'
-'MgmtEth0/RP0/CPU0/0            100.125.252.248 Up              Up      management'
+'MgmtEth0/RP0/CPU0/0            10.125.252.248 Up              Up      management'
 'MgmtEth0/RP1/CPU0/0            unassigned      Shutdown        Down     default '
 'TenGigE0/0/0/0                 unassigned      Shutdown        Down     default '
 'TenGigE0/0/0/1                 unassigned      Shutdown        Down     default '
@@ -121,15 +121,15 @@ use Ansible to copy command output to a text file her host:
 then sed and awk to parse all text files and output Mgmt port info per host:  
 `sed 's/,/\n/g' *.txt | awk '/Mgmt/ { print $0 }'`
 ```yaml
-"MgmtEth0/RP0/CPU0/0            100.125.252.240 Up              Up       management"
+"MgmtEth0/RP0/CPU0/0            10.125.252.240 Up              Up       management"
 "MgmtEth0/RP1/CPU0/0            unassigned      Shutdown        Down     default"]
 "MgmtEth0/RP0/CPU0/0            unassigned      Up              Up       default "
-"MgmtEth0/RP1/CPU0/0            100.125.252.241 Up              Up       management"]
+"MgmtEth0/RP1/CPU0/0            10.125.252.241 Up              Up       management"]
 ```
 use sed to parse multiple Ansible show and run commands:  
-`sed 's/"/\n/g' sh_ver-100.125.252.240.txt | sed '1d;2d;3d;5d;6d;7d;9d;11d' | sed '/]/d'`
+`sed 's/"/\n/g' sh_ver-10.125.252.240.txt | sed '1d;2d;3d;5d;6d;7d;9d;11d' | sed '/]/d'`
 ```yaml
-hostname chcgildt-srcore-B-pr01-LAB
+hostname sitex-pe01
 MgmtEth0/RP0/CPU0/0            100.125.252.240 Up              Up       management
 MgmtEth0/RP1/CPU0/0            unassigned      Shutdown        Down     default
 Cisco IOS XR Software, Version 7.5.1
