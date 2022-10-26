@@ -30,14 +30,14 @@ INTF                    ADDR             STATUS    PROTO
 TenGigabitEthernet1/24  unassigned       down      down
 TenGigabitEthernet1/30  unassigned       down      down
 TenGigabitEthernet1/31  unassigned       up        up
-Loopback0               100.125.191.36   up        up
-Loopback40              100.123.66.57    up        up
+Loopback0               10.125.191.36   up        up
+Loopback40              10.123.66.57    up        up
 Port-channel1           unassigned       up        up
-Tunnel0                 100.125.172.181  up        up
-Tunnel1                 100.125.172.166  up        up
-Tunnel2                 100.125.172.181  up        up
+Tunnel0                 10.125.172.181  up        up
+Tunnel1                 10.125.172.166  up        up
+Tunnel2                 10.125.172.181  up        up
 Vlan1                   unassigned       up        up
-Vlan40                  100.123.66.2     up        up
+Vlan40                  10.123.66.2     up        up
 ```
 
 filter on tunnel interfaces that are up:  
@@ -67,9 +67,9 @@ filter for Vlan and print field 1 4 2 separated by 8 spaces:
 `awk '/Vl/ {printf "%-8s %-8s %s\n", $1, $4, $2}' cisco-int`  
 ```yaml
 Vlan1    up       unassigned
-Vlan10   up       100.125.172.2
-Vlan32   up       100.125.172.34
-Vlan40   up       100.123.66.2
+Vlan10   up       10.125.172.2
+Vlan32   up       10.125.172.34
+Vlan40   up       10.123.66.2
 ```
 add header using BEGIN:
 
