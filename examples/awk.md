@@ -132,14 +132,14 @@ use sed to parse multiple Ansible show and run commands:
 hostname sitex-pe01
 MgmtEth0/RP0/CPU0/0            100.125.252.240 Up              Up       management
 MgmtEth0/RP1/CPU0/0            unassigned      Shutdown        Down     default
-Cisco IOS XR Software, Version 7.5.1
+Cisco IOS XR Software, Version 6.8.2
 ```
 
 #### awk string manipulation functions with gsub - global substitution  
 `awk '{ gsub(/,/, "\n"); print }' sh-int-brief`  # global replace , with \n
 ```yaml
 'Interface                      IP-Address      Status          Protocol Vrf-Name'
-'MgmtEth0/RP0/CPU0/0            100.125.252.248 Up              Up       management'
+'MgmtEth0/RP0/CPU0/0            10.125.252.248 Up              Up       management'
 'MgmtEth0/RP1/CPU0/0            unassigned      Shutdown        Down     default '
 'TenGigE0/0/0/0                 unassigned      Shutdown        Down     default '
 ```
