@@ -3,6 +3,5 @@
 * parse with Linux AWK and Stream Editor (SED)  
 * Perl to search a directory of command outputs for data  
 
-Perl, TextFSM, AWK/SED
 
 
