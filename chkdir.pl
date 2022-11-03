@@ -1,6 +1,7 @@
 #!/usr/bin/perl
-# find all .txt files in a directory
+# use ansible, python, etc to drop command output from network devices to a folder
 # verify ansible-playbook created per host .txt file of command output
+
 
 # name: copy output to file
 #       copy:
